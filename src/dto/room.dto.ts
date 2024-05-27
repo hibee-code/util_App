@@ -1,6 +1,6 @@
 import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
 
-export class UtilityDto {
+export class RoomDto {
   @IsNotEmpty()
   @IsString()
   name: string;

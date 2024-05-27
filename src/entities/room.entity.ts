@@ -1,7 +1,7 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class Utility {
+export class Room {
   @PrimaryGeneratedColumn({ type: 'bigint' })
   id: string;
 

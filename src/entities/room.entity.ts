@@ -11,6 +11,6 @@ export class Room {
   @Column({ type: 'numeric' })
   capacity: number;
 
-  @Column({ type: 'varchar' })
+  @Column({ type: 'bigint' })
   userId: string;
 }

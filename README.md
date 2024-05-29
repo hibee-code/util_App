@@ -6,7 +6,7 @@ Retrieve Rooms
 
 
 Request Method: GET
-1. URL: http://localhost:3000/api/rooms?limit=10&filters=[]&sort=[{"field":"name","order":"ASC"}];
+1. URL: https://util-app-c79e.onrender.com/api/rooms?limit=10&filters=[]&sort=[{"field":"name","order":"ASC"}];
 
           Query Parameters:
           page (number, required): The page number for pagination.
@@ -52,7 +52,7 @@ The data property contains an array of room objects, where each room has an id, 
       
       Request Method: GET
 
-        http://localhost:3000/api/rooms?limit=5&filters=[{"field":"capacity","value":10,"operator":"gte"}]&sort=[{"field":"name","order":"ASC"}];
+        https://util-app-c79e.onrender.com/api/rooms?limit=5&filters=[{"field":"capacity","value":10,"operator":"gte"}]&sort=[{"field":"name","order":"ASC"}];
 
 
                         Query Parameters:
@@ -93,7 +93,7 @@ The data property contains an array of room objects, where each room has an id, 
 
 
 3. search api III
-      http://localhost:3000/api/rooms?page=1&limit=2&filters=[{"field":"userId","value":1,"operator":"equals"}]&sort=[{"field":"capacity","order":"DESC"}]
+      https://util-app-c79e.onrender.com/api/rooms?page=1&limit=2&filters=[{"field":"userId","value":1,"operator":"equals"}]&sort=[{"field":"capacity","order":"DESC"}]
 
               Retrieve Rooms
             This endpoint retrieves a list of rooms with optional pagination, filtering, and sorting.
@@ -144,7 +144,7 @@ The data property contains an array of room objects, where each room has an id, 
     This endpoint retrieves a list of rooms with optional pagination, filtering, and sorting.
 
 Request Method: GET
-URL: http://localhost:3000/api/rooms?page=0&limit=5&filters=[{"field":"name","value":"Room","operator":"like"}]&sort=[{"field":"userId","order":"ASC"}]
+URL: https://util-app-c79e.onrender.com/api/rooms?page=0&limit=5&filters=[{"field":"name","value":"Room","operator":"like"}]&sort=[{"field":"userId","order":"ASC"}]
 
                   Query Parameters:
                   page (number, required): The page number for pagination.

@@ -4,7 +4,6 @@ import { RoomDto } from 'src/dto/room.dto';
 import { Room } from 'src/entities/room.entity';
 import { UtilityService } from 'src/utility/utility.service';
 import { Repository } from 'typeorm';
-//import { DataSource, EntityManager } from 'typeorm';
 
 @Injectable()
 export class RoomService {
@@ -20,15 +19,12 @@ export class RoomService {
     return savedUtils;
   }
 
-  async searchRooms(filters: any, sortOptions: any, paginationOptions: any) {
+  async searchRooms(filters: any, sortOpt: any, pagOpt: any) {
     let queryBuilder = this.roomRepository.createQueryBuilder('room');
 
     queryBuilder = this.utilityService.applyFilters(queryBuilder, filters);
-    queryBuilder = this.utilityService.applySorting(queryBuilder, sortOptions);
-    queryBuilder = this.utilityService.applyPagination(
-      queryBuilder,
-      paginationOptions,
-    );
+    queryBuilder = this.utilityService.applySorting(queryBuilder, sortOpt);
+    queryBuilder = this.utilityService.applyPagination(queryBuilder, pagOpt);
 
     return queryBuilder.getManyAndCount();
   }

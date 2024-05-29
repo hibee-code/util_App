@@ -8,7 +8,7 @@ export interface PagParams {
 
 export interface FilterParams {
   field: string;
-  value: string | number;
+  value: string;
   operator: string;
 }
 
@@ -21,9 +21,9 @@ export interface SortParams {
 export class UtilityService {
   applyPagination<T>(
     query: SelectQueryBuilder<T>,
-    paginationOptions: PagParams,
+    pagOpt: PagParams,
   ): SelectQueryBuilder<T> {
-    const { page, limit } = paginationOptions;
+    const { page, limit } = pagOpt;
     query.skip(page === 0 ? page : (page - 1) * limit).take(limit);
     return query;
   }
@@ -82,9 +82,9 @@ export class UtilityService {
 
   applySorting<T>(
     query: SelectQueryBuilder<T>,
-    sortOptions: SortParams[],
+    sortOpt: SortParams[],
   ): SelectQueryBuilder<T> {
-    sortOptions.forEach(({ field, order }) => {
+    sortOpt.forEach(({ field, order }) => {
       query.addOrderBy(`"${field}"`, order);
     });
     return query;
